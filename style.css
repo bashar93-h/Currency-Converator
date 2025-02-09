@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat;
+    background-color: #0A1172;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    top: 50%;
+    left: -25%;
+    background-color: #ffffff;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+/* absolute: Moves the element relative to the nearest positioned (non-static) ancestor. */
+
+/* fixed: Moves the element relative to the viewport (stays fixed when scrolling). */
+
+.container {
+    position: fixed;
+    z-index: 100;
+    width: 900px;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 5px 5px 20px #777;
+}
+
+
+/* small media  (tablets and small phones)*/
+@media (max-width: 768px) {
+    .container {
+        /* width: 330px; */
+        width: 95%;
+        padding: 5px;
+        text-align: center;
+    }
+}
+
+
+
+.container .title {
+    font-size: 35px;
+    margin-bottom: 55px;
+}
+
+.container .user-input {
+    width: 80%;
+}
+@media (max-width: 768px) {
+    .container .user-input {
+        width: 90%;
+    }
+}
+.container .user-input label{
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.container .user-input input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 25px 15px;
+    transition: transform .3s;
+    outline: none;
+}
+.container .user-input input:focus {
+    border: none;
+    box-shadow: 5px 5px 10px #777;
+    transform: scale(1.03);
+}
+
+
+.currency-lists {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 50px 0px 70px;
+
+}
+@media (max-width: 768px) {
+    .currency-lists{
+        width: 90%;
+        flex-direction: column;
+        margin: 30px 0 30px;
+    }
+}
+.currency-lists .from-list,
+.currency-lists .to-list {
+    width: 35%;
+    height: 100px;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1;
+    transition: .1s;
+}
+@media (max-width: 768px) {
+    .currency-lists .from-list,
+    .currency-lists .to-list {
+        width: 100%;
+    } 
+}
+.currency-lists .from-list:has(.input-container input[list]:focus),
+.currency-lists .to-list:has(.input-container input[list]:focus) {
+    border: 1px solid blue;
+    transform: scale(1.02);
+}
+
+.currency-lists .from-list label,
+.currency-lists .to-list label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.currency-lists .from-list .input-container,
+.currency-lists .to-list .input-container {
+    display: flex;
+    align-items: center;
+} 
+.currency-lists .from-list .input-container img,
+.currency-lists .to-list .input-container img {
+    margin-right: 10px;
+    width: 30px;
+}
+.currency-lists .from-list .input-container .input,
+.currency-lists .to-list .input-container .input {
+    position: relative;
+    display: inline-block;
+} 
+
+.currency-lists .from-list .input-container .input span,
+.currency-lists .to-list .input-container .input span{
+    visibility: hidden;
+    position: absolute;
+    white-space: nowrap;
+} 
+
+.currency-lists .from-list .input-container input[list],
+.currency-lists .to-list .input-container input[list]{
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+}
+
+.currency-lists .from-list .input-container .country-currency,
+.currency-lists .to-list .input-container .country-currency {
+    color: #333;
+    text-align: center;
+}
+
+.currency-lists i {
+    font-size: 22px;
+    transition: .2s;
+    cursor: pointer;
+}
+.currency-lists i:hover {
+    transform: scale(1.2);
+}
+
+
+.output {
+    width: 80%;
+    margin-bottom: 30px;
+    display: none;
+}
+@media (max-width: 768px) {
+    .output {
+        width: 90%;
+    }   
+}
+.output .total-result{
+    margin-bottom: 20px;    
+}
+.output .exchange-info span:first-of-type{
+    display: block;
+    margin-bottom: 10px;
+}
+.convert {
+    width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 20px;
+    background-color: #406464;
+    color: white;
+    transition: .3s;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
+.convert:hover {
+    background-color: #507C7C;
+}
+

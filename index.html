@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Luckiest+Guy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2 class="title">Currency Converator</h2>
+        <div class="user-input">
+            <label for="amount">Enter an amount</label>
+            <input type="number" id="amount">
+        </div>
+        <div class="currency-lists">
+            <div class="from-list">
+                <label for="from">From</label>
+                <div class="input-container">
+                    <img id="from-flag" src="">
+                    <div class="input">
+                        <span class="text-span"></span>
+                        <input list="from" placeholder="type to search" id="from-input">    
+                        <datalist id="from">
+                        </datalist>        
+                    </div>
+                    <span class="country-currency"></span>
+                </div>
+            </div>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <div class="to-list">
+                <label for="to">To</label>
+                <div class="input-container">
+                    <img id="to-flag" src="">
+                    <div class="input">
+                        <span class="text-span"></span>
+                        <input list="to" placeholder="type to search" spellcheck="false" autocomplete="off" role="combobox" aria-describedby="" id="to-input">    
+                    </div>
+                    <datalist id="to">
+                    </datalist>
+                    <span class="country-currency"></span>    
+                </div>
+            </div>
+        </div>
+        <div class="output">
+            <div class="total-result">
+                <span></span>
+            </div>
+            <div class="exchange-info">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <button class="convert">Convert</button>
+    </div>
+    <script src="./main.js" type="module"></script>
+    <script src="./country-list.js" type="module"></script>
+    <script src="./country-currency.js" type="module"></script>
+</body>
+</html>
